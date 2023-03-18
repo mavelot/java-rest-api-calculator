@@ -17,6 +17,16 @@ pipeline {
                     junit '**/target/surefire-reports/TEST-*.xml'
                 }
             }
+        }
+         stage('Publish') {
+             steps {
+                sh './mvnw package'
+            }
+            post {
+                success {
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
         }    
     }
 }
