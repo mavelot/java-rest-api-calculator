@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
              steps {
-                sh 'git clone -b dev 'https://github.com/mavelot/java-rest-api-calculator.git''
+                git 'https://github.com/mavelot/java-rest-api-calculator.git'
                 sh './mvnw clean compile'
             }
         }
