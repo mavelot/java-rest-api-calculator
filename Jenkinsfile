@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
              steps {
-                git 'https://github.com/mavelot/java-rest-api-calculator.git'
+                git branch: "dev", url: 'https://github.com/jenkinsci/git-parameter-plugin.git'
                 sh './mvnw clean compile'
             }
         }
