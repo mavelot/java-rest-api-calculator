@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
              steps {
-                git branch: '${BRANCH_NAME}', url: 'https://github.com/jenkinsci/git-parameter-plugin.git'
+                git branch: dev, url: 'https://github.com/jenkinsci/git-parameter-plugin.git'
                 sh './mvnw clean compile'
             }
         }
